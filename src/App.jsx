@@ -1,35 +1,33 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React, { useEffect, useState } from "react";
+import Meals from "./components/Meals";
+import axios from "axios";
 
-function App() {
-  const [count, setCount] = useState(0)
+const App = () => {
+    const [mealsData, setMealsData] = useState([]);
+    const [searchData, setSearchData] = useState("beef");
 
-  return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
+    useEffect(() => {
+        axios
+            .get(
+                "https://www.themealdb.com/api/json/v1/1/search.php?s=" +
+                    searchData
+            )
+            .then((res) => setMealsData(res.data.meals));
+    }, [searchData]);
 
-export default App
+    return (
+        <div>
+            <h1>Cooking App</h1>
+            <form>
+                <input
+                    type="text"
+                    placeholder="Nom de plat en anglais"
+                    onChange={(e) => setSearchData(e.target.value)}
+                />
+            </form>
+            <Meals meals={mealsData} />
+        </div>
+    );
+};
+
+export default App;
