@@ -2,9 +2,17 @@ header {
     padding: 40px 60px 20px;
     text-align: center;
 
+    @media screen and (max-width: 420px) {
+        padding: 40px 20px 20px;
+    }
+
     h1 {
         font-size: 2.4rem;
         margin-bottom: 25px;
+
+        @media screen and (max-width: 420px) {
+            font-size: 1.8rem;
+        }
     }
     form {
         input[type="text"] {
@@ -16,6 +24,10 @@ header {
             border: 1px solid rgba($black, 20%);
             outline: none;
             transition: 0.1s ease-in;
+
+            @media screen and (max-width: 420px) {
+                min-width: 140px;
+            }
 
             &:focus {
                 border: 1px solid rgba($color1, 60%);

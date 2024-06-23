@@ -1,6 +1,10 @@
 .meals-container {
     margin: 40px 60px 80px;
 
+    @media screen and (max-width: 420px) {
+        margin: 10px 20px 80px;
+    }
+
     .meals {
         display: flex;
         flex-wrap: wrap;
@@ -13,6 +17,14 @@
             min-width: 240px;
             flex: 1;
             padding: 10px 10px 30px;
+
+            @media screen and (max-width: 420px) {
+                min-width: 180px;
+            }
+
+            @media screen and (max-width: 280px) {
+                min-width: 140px;
+            }
 
             .img-container {
                 width: 100%;
