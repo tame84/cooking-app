@@ -1,6 +1,22 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
-const Meal = ({ meal }) => {
+const Meal = ({ meal, index }) => {
+    const [instructions, setInstructions] = useState(null);
+
+    useEffect(() => {
+        setInstructions(document.getElementById(`instructions${index}`));
+    }, []);
+
+    const handleClick = () => {
+        if (instructions.className === "active") {
+            instructions.style.display = "none";
+        } else {
+            instructions.style.display = "block";
+        }
+
+        instructions.classList.toggle("active");
+    };
+
     return (
         <div className="meal">
             <div className="img-container">
@@ -12,11 +28,19 @@ const Meal = ({ meal }) => {
                 <p>{meal.strCategory}</p>
             </div>
             <div className="instructions-container">
-                <button>Voir les instructions</button>
-                <div className="instructions">{meal.strInstructions}</div>
+                <button onClick={() => handleClick()}>
+                    Voir les instructions
+                </button>
+                <p id={`instructions${index}`} className="active">
+                    {meal.strInstructions}
+                </p>
             </div>
-            <a href={meal.strSource}>En savoir plus (Lien Externe)</a>
-            <a href={meal.strYoutube}>Voir la vidéo</a>
+            <a href={meal.strSource} target="_blank">
+                En savoir plus (Lien Externe)
+            </a>
+            <a href={meal.strYoutube} target="_blank">
+                Voir la vidéo
+            </a>
         </div>
     );
 };
