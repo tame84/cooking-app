@@ -8,7 +8,7 @@ const Meal = ({ meal, index }) => {
     }, []);
 
     const handleClick = () => {
-        if (instructions.className === "active") {
+        if (instructions.classList.contains("active")) {
             instructions.style.display = "none";
         } else {
             instructions.style.display = "block";
@@ -23,7 +23,7 @@ const Meal = ({ meal, index }) => {
                 <img src={meal.strMealThumb} alt="" />
             </div>
             <h2>{meal.strMeal}</h2>
-            <div className="mealInfo">
+            <div className="meal-infos">
                 <p>{meal.strArea}</p>
                 <p>{meal.strCategory}</p>
             </div>
@@ -31,16 +31,18 @@ const Meal = ({ meal, index }) => {
                 <button onClick={() => handleClick()}>
                     Voir les instructions
                 </button>
-                <p id={`instructions${index}`} className="active">
+                <p id={`instructions${index}`} className="instructions">
                     {meal.strInstructions}
                 </p>
             </div>
-            <a href={meal.strSource} target="_blank">
-                En savoir plus (Lien Externe)
-            </a>
-            <a href={meal.strYoutube} target="_blank">
-                Voir la vidéo
-            </a>
+            <div className="links">
+                <a href={meal.strSource} target="_blank">
+                    En savoir plus (lien externe)
+                </a>
+                <a href={meal.strYoutube} target="_blank">
+                    Voir la vidéo
+                </a>
+            </div>
         </div>
     );
 };

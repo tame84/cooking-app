@@ -1,0 +1,27 @@
+// Variables
+$white: #eeeeee;
+$white2: #fafafa;
+$black: #0a0a0a;
+$color1: #0084ff;
+
+// Settings
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    background: $white;
+}
+p,
+h1,
+h2 {
+    color: $black;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+a {
+    color: $color1;
+
+    &:visited {
+        color: $color1;
+    }
+}

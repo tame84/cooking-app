@@ -17,14 +17,16 @@ const App = () => {
 
     return (
         <div>
-            <h1>Cooking App</h1>
-            <form>
-                <input
-                    type="text"
-                    placeholder="Nom de plat en anglais"
-                    onChange={(e) => setSearchData(e.target.value)}
-                />
-            </form>
+            <header>
+                <h1>Cooking App</h1>
+                <form>
+                    <input
+                        type="text"
+                        placeholder="Nom de plat en anglais"
+                        onChange={(e) => setSearchData(e.target.value)}
+                    />
+                </form>
+            </header>
             <Meals meals={mealsData} />
         </div>
     );

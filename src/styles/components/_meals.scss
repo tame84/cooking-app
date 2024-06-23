@@ -1,0 +1,80 @@
+.meals-container {
+    margin: 40px 60px 80px;
+
+    .meals {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        position: relative;
+
+        .meal {
+            background: $white2;
+            border-radius: 16px;
+            min-width: 240px;
+            flex: 1;
+            padding: 10px 10px 30px;
+
+            .img-container {
+                width: 100%;
+                border-radius: 6px;
+                margin-bottom: 10px;
+
+                img {
+                    width: 100%;
+                    border-radius: 6px;
+                }
+            }
+            h2 {
+                font-size: 1.4rem;
+                margin-bottom: 6px;
+            }
+            .meal-infos {
+                display: flex;
+                gap: 4px;
+                margin-bottom: 30px;
+
+                p {
+                    background: $color1;
+                    border-radius: 20px;
+                    padding: 4px 10px;
+                    font-size: 0.9rem;
+                    color: $white2;
+                }
+            }
+            .instructions-container {
+                margin-bottom: 10px;
+
+                button {
+                    cursor: pointer;
+                    background: none;
+                    border: solid 1px $color1;
+                    width: 100%;
+                    padding: 10px 0;
+                    border-radius: 6px;
+                    transition: 0.05s ease-in;
+                    margin-bottom: 10px;
+
+                    &:hover {
+                        background: $color1;
+                        color: $white2;
+                    }
+                }
+                .instructions {
+                    display: none;
+                    overflow-y: scroll;
+                    height: 140px;
+                    padding: 4px;
+                    line-height: 1.4;
+                }
+                .active {
+                    margin-bottom: 10px;
+                }
+            }
+            .links {
+                display: flex;
+                flex-direction: column;
+                gap: 6px;
+            }
+        }
+    }
+}
