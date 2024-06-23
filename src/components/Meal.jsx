@@ -36,12 +36,16 @@ const Meal = ({ meal, index }) => {
                 </p>
             </div>
             <div className="links">
-                <a href={meal.strSource} target="_blank">
-                    En savoir plus (lien externe)
-                </a>
-                <a href={meal.strYoutube} target="_blank">
-                    Voir la vidéo
-                </a>
+                {meal.strSource && (
+                    <a href={meal.strSource} target="_blank">
+                        En savoir plus (lien externe)
+                    </a>
+                )}
+                {meal.strYoutube && (
+                    <a href={meal.strYoutube} target="_blank">
+                        Voir la vidéo
+                    </a>
+                )}
             </div>
         </div>
     );

@@ -12,7 +12,7 @@ const App = () => {
                 "https://www.themealdb.com/api/json/v1/1/search.php?s=" +
                     searchData
             )
-            .then((res) => setMealsData(res.data.meals));
+            .then((res) => setMealsData(res.data.meals.slice(0, 24)));
     }, [searchData]);
 
     return (
