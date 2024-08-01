@@ -1,5 +1,22 @@
-# Cooking App w/React
+# Cooking App 🍳
 
-Site Web développé en React.js pour trouver des recettes de cuisines à partir du nom d'un plat.
+Find recipes by searching an ingredient
 
-API : themealdb.com (www.themealdb.com/api/json/v1/1/filter.php?i=chicken_breast)
+## Use
+
+Search dishes recipes by ingredient keywords.
+
+The available dish information are :
+- Name
+- Image
+- Recipe
+- Link to full recipe
+
+## Languages
+
+[![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)](https://github.com/tame84)
+[![SASS](https://img.shields.io/badge/Sass-CC6699?style=for-the-badge&logo=sass&logoColor=white)](https://github.com/tame84)
+
+## API
+
+### (https://www.themealdb.com/api
