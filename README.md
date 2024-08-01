@@ -19,4 +19,4 @@ The available dish information are :
 
 ## API
 
-### (https://www.themealdb.com/api
+### https://www.themealdb.com/api
